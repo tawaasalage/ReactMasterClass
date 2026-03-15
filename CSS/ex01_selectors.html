@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Ex 01 — Selectors & Specificity</title>
+    <style>
+      /* EXERCISE 01 — Selectors & Specificity
+         TASK: Write CSS rules to achieve each labelled goal.
+         Do NOT change the HTML below.
+
+         1. Element selector  — make ALL paragraphs colour: #333
+         2. Class selector    — give .card a background: #f0f4fa and padding: 16px
+         3. ID selector       — give #header a height: 60px and background: navy
+         4. Descendant        — text inside .card p should be font-size: 14px
+         5. Direct child      — only direct <h2> children of .card: color: teal
+         6. Pseudo-class      — links turn color: tomato on :hover
+         7. Pseudo-element    — first line of every <p> is font-weight: bold
+      */
+
+      /* 1. All paragraphs */
+
+      /* 2. .card */
+
+      /* 3. #header */
+
+      /* 4. Paragraphs inside .card */
+
+      /* 5. Direct h2 children of .card */
+
+      /* 6. Link hover */
+
+      /* 7. First line of every paragraph */
+    </style>
+  </head>
+  <body>
+    <div id="header">
+      <h1>My Page</h1>
+    </div>
+
+    <div class="card">
+      <h2>Direct child heading</h2>
+      <div>
+        <h2>Nested heading (not a direct child)</h2>
+      </div>
+      <p id="special">This paragraph is inside .card and also has an id.</p>
+      <p>
+        Another paragraph inside the card with more text to show the first-line
+        effect clearly.
+      </p>
+      <a href="#">Hover over me</a>
+    </div>
+
+    <p>
+      A paragraph outside the card. Also long enough to show the first-line
+      pseudo-element working correctly in the browser.
+    </p>
+  </body>
+</html>

@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CSS Ex 03 — Flexbox</title>
+    <style>
+      *,
+      *::before,
+      *::after {
+        box-sizing: border-box;
+      }
+      body {
+        font-family: sans-serif;
+        margin: 0;
+        padding: 16px;
+      }
+
+      /* Shared card style — do not change */
+      .card {
+        background: #1a5276;
+        color: white;
+        padding: 16px 24px;
+        border-radius: 8px;
+        font-weight: bold;
+        font-size: 18px;
+      }
+
+      .row-1 {
+        display: flex;
+      }
+
+      .row-2 {
+        display: flex;
+      }
+
+      .row-3 {
+        display: flex;
+      }
+
+      .row-4 {
+        display: flex;
+      }
+
+      .row-5 {
+        display: flex;
+        height: 120px;
+        background: #eaf0fb;
+      }
+
+      .row-6 {
+        display: flex;
+      }
+
+      .row-7 {
+        display: flex;
+        gap: 8px;
+        width: 260px;
+        background: #eaf0fb;
+        padding: 8px;
+      }
+
+      .navbar {
+        display: flex;
+        background: #0b2545;
+        color: white;
+        padding: 0 24px;
+        height: 60px;
+      }
+
+      .row-1,
+      .row-2,
+      .row-3,
+      .row-4,
+      .row-5,
+      .row-6,
+      .row-7 {
+        gap: 12px;
+        margin-bottom: 32px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Flexbox Exercises</h1>
+
+    <h2>Goal 1 — Row, left-aligned</h2>
+    <div class="row-1">
+      <div class="card">A</div>
+      <div class="card">B</div>
+      <div class="card">C</div>
+    </div>
+
+    <h2>Goal 2 — Row, centred</h2>
+    <div class="row-2">
+      <div class="card">A</div>
+      <div class="card">B</div>
+      <div class="card">C</div>
+    </div>
+
+    <h2>Goal 3 — Space between</h2>
+    <div class="row-3">
+      <div class="card">A</div>
+      <div class="card">B</div>
+      <div class="card">C</div>
+    </div>
+
+    <h2>Goal 4 — Column (stacked)</h2>
+    <div class="row-4">
+      <div class="card">A</div>
+      <div class="card">B</div>
+      <div class="card">C</div>
+    </div>
+
+    <h2>Goal 5 — Vertically centred in 120px container</h2>
+    <div class="row-5">
+      <div class="card">A</div>
+      <div class="card">B</div>
+      <div class="card">C</div>
+    </div>
+
+    <h2>Goal 6 — Cards fill the row equally</h2>
+    <div class="row-6">
+      <div class="card">A</div>
+      <div class="card">B</div>
+      <div class="card">C</div>
+    </div>
+
+    <h2>Goal 7 — Cards wrap in a narrow container</h2>
+    <div class="row-7">
+      <div class="card">A</div>
+      <div class="card">B</div>
+      <div class="card">C</div>
+    </div>
+
+    <h2>Goal 8 — Navbar</h2>
+    <nav class="navbar">
+      <span>MyApp</span>
+      <span>Home · About · Contact</span>
+    </nav>
+  </body>
+</html>
