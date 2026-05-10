@@ -7,6 +7,7 @@ import UseContextPage from "./pages/UseContextPage";
 import { useTheme } from "./context/ThemeContext";
 import UseRefPage from "./pages/UseRefPage";
 import UseMemoPage from "./pages/UseMemoPage";
+import ReduxPage from "./pages/ReduxPage";
 
 function App() {
   const { theme } = useTheme();
@@ -64,6 +65,14 @@ function App() {
             >
               useMemo
             </NavLink>
+            <NavLink
+              to="/redux"
+              className={({ isActive }) =>
+                isActive ? "nav-link active" : "nav-link"
+              }
+            >
+              Redux
+            </NavLink>
           </div>
         </nav>
         <Routes>
@@ -74,6 +83,7 @@ function App() {
           <Route path="/use-context" element={<UseContextPage />} />
           <Route path="/use-ref" element={<UseRefPage />} />
           <Route path="/use-memo" element={<UseMemoPage />} />
+          <Route path="/redux" element={<ReduxPage />} />
         </Routes>
       </div>
     </div>

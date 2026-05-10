@@ -108,6 +108,10 @@ select {
   background: #475569;
 }
 
+.button.reset {
+  background: #842a36;
+}
+
 .count {
   font-size: 2rem;
   font-weight: 700;
