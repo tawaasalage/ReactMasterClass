@@ -1,20 +1,17 @@
-import { useDispatch, useSelector } from "react-redux";
-import { increment, decrement, reset } from "../store/reduxCounterStore";
+import { useSelector, useDispatch } from "react-redux";
+import { increment, decrement, reset } from "../store/counterSlice";
 
-export default function ReduxPage() {
-  const count = useSelector((state) => state.normalCounter.count);
+export default function ReduxToolkitPage() {
+  const count = useSelector((state) => state.counter.count);
   const dispatch = useDispatch();
 
   return (
     <section>
       <article className="card">
-        <h1>Default Redux </h1>
+        <h1>Redux Toolkit</h1>
         <p className="count">{count}</p>
         <div className="actions">
-          <button
-            className="button"
-            onClick={() => dispatch(increment())}
-          >
+          <button className="button" onClick={() => dispatch(increment())}>
             Increase
           </button>
           <button

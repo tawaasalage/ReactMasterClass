@@ -4,10 +4,12 @@ import UseStatePage from "./pages/UseStatePage";
 import UseReducerPage from "./pages/UseReducerPage";
 import UseEffectsPage from "./pages/UseEffectsPage";
 import UseContextPage from "./pages/UseContextPage";
-import { useTheme } from "./context/ThemeContext";
+import { useTheme } from "./context/useTheme";
 import UseRefPage from "./pages/UseRefPage";
 import UseMemoPage from "./pages/UseMemoPage";
 import ReduxPage from "./pages/ReduxPage";
+import ReduxToolkitPage from "./pages/ReduxToolkitPage";
+import ZustandPage from "./pages/ZustandPage";
 
 function App() {
   const { theme } = useTheme();
@@ -73,6 +75,22 @@ function App() {
             >
               Redux
             </NavLink>
+            <NavLink
+              to="/redux-toolkit"
+              className={({ isActive }) =>
+                isActive ? "nav-link active" : "nav-link"
+              }
+            >
+              Redux Toolkit
+            </NavLink>
+            <NavLink
+              to="/zustand"
+              className={({ isActive }) =>
+                isActive ? "nav-link active" : "nav-link"
+              }
+            >
+              Zustand
+            </NavLink>
           </div>
         </nav>
         <Routes>
@@ -84,6 +102,8 @@ function App() {
           <Route path="/use-ref" element={<UseRefPage />} />
           <Route path="/use-memo" element={<UseMemoPage />} />
           <Route path="/redux" element={<ReduxPage />} />
+          <Route path="/redux-toolkit" element={<ReduxToolkitPage />} />
+          <Route path="/zustand" element={<ZustandPage />} />
         </Routes>
       </div>
     </div>

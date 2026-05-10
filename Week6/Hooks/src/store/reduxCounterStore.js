@@ -1,11 +1,9 @@
-import { createStore } from "redux";
-
 const initialState = {
   count: 0,
   fullname: "John Doe",
 };
 
-function counterReducer(state = initialState, action) {
+export default function counterReducer(state = initialState, action) {
   switch (action.type) {
     case "INCREMENT":
       return {
@@ -38,5 +36,3 @@ export function decrement() {
 export function reset() {
   return { type: "RESET" };
 }
-
-export const reduxStore = createStore(counterReducer);
