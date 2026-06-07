@@ -4,38 +4,34 @@ import TableRow from "../ui/TableRow";
 
 const columns = ["Name", "Email", "Course", "Age", "Actions"];
 
-export default function StudentTable() {
+export default function StudentTable({ students, onDelete, onEdit }) {
   return (
     <section>
       <div>
         <p className="eyebrow">Student Table</p>
         <h2>Student Entries</h2>
-        <strong>0 Students</strong>
+        <strong>{students.length} Students</strong>
       </div>
 
-      <div className="table-wrap">
-        <table>
-          <TableHeader columns={columns} />
-          <tbody>
-            <TableRow
-              student={{
-                name: "John Doe",
-                email: "john.doe@example.com",
-                course: "Computer Science",
-                age: 20,
-              }}
-            />
-            <TableRow
-              student={{
-                name: "John Doe",
-                email: "john.doe@example.com",
-                course: "Computer Science",
-                age: 20,
-              }}
-            />
-          </tbody>
-        </table>
-      </div>
+      {students.length === 0 ? (
+        <p className="empty-state">No Student entries found.</p>
+      ) : (
+        <div className="table-wrap">
+          <table>
+            <TableHeader columns={columns} />
+            <tbody>
+              {students.map((student) => (
+                <TableRow
+                  key={student.id}
+                  student={student}
+                  onDelete={onDelete}
+                  onEdit={onEdit}
+                />
+              ))}
+            </tbody>
+          </table>
+        </div>
+      )}
     </section>
   );
 }

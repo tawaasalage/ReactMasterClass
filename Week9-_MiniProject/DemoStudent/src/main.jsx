@@ -5,6 +5,9 @@ import App from "./App.jsx";
 import { BrowserRouter } from "react-router-dom";
 import { useThemeStore } from "./zustand/useThemeStore";
 
+import { Provider } from "react-redux";
+import { store } from "./redux/store";
+
 function ThemeProvider({ children }) {
   const { theme } = useThemeStore();
 
@@ -17,10 +20,12 @@ function ThemeProvider({ children }) {
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
-    <BrowserRouter>
-      <ThemeProvider>
-        <App />
-      </ThemeProvider>
-    </BrowserRouter>
+    <Provider store={store}>
+      <BrowserRouter>
+        <ThemeProvider>
+          <App />
+        </ThemeProvider>
+      </BrowserRouter>
+    </Provider>
   </StrictMode>,
 );

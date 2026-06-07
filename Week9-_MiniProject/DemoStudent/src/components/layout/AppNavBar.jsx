@@ -3,7 +3,7 @@ import { Link, NavLink } from "react-router-dom";
 import Button from "../ui/Button";
 import { useThemeStore } from "../../zustand/useThemeStore";
 import { useAuthStore } from "../../zustand/useAuthStore";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Navigate } from "react-router-dom";
 
 export default function AppNavBar() {
   const navigate = useNavigate();
@@ -14,6 +14,10 @@ export default function AppNavBar() {
     logoutUser();
     navigate("/login");
   };
+
+  if (!user) {
+    return <Navigate to="/login" replace />;
+  }
 
   return (
     <header className="topbar">

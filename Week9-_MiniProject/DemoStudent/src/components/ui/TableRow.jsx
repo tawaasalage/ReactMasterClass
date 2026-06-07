@@ -1,7 +1,7 @@
 import React from "react";
 import Button from "./Button";
 
-export default function TableRow({ student }) {
+export default function TableRow({ student, onDelete, onEdit }) {
   return (
     <tr>
       <td>{student.name}</td>
@@ -10,8 +10,22 @@ export default function TableRow({ student }) {
       <td>{student.age}</td>
       <td>
         <div className="table-actions">
-          <Button>Edit</Button>
-          <Button variant="danger">Delete</Button>
+          <Button
+            onClick={() => {
+              onEdit(student);
+            }}
+          >
+            Edit
+          </Button>
+          <Button
+            variant="danger"
+            onClick={() => {
+              console.log("Delete student with ID:", student.id);
+              onDelete(student.id);
+            }}
+          >
+            Delete
+          </Button>
         </div>
       </td>
     </tr>
