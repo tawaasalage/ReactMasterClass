@@ -23,6 +23,10 @@ const studentSlice = createSlice({
   name: "student",
   initialState,
   reducers: {
+    setStudents: (state, action) => {
+      state.list = action.payload;
+    },
+
     addStudent: (state, action) => {
       state.list.push({ id: nanoid(), ...action.payload });
     },
@@ -44,6 +48,6 @@ const studentSlice = createSlice({
   },
 });
 
-export const { addStudent, updateStudent, deleteStudent } =
+export const { addStudent, updateStudent, deleteStudent, setStudents } =
   studentSlice.actions;
 export default studentSlice.reducer;

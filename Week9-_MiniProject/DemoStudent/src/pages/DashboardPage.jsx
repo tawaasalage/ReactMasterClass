@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import StudentForm from "../components/student/StudentForm";
 import StudentTable from "../components/student/StudentTable";
 
@@ -7,7 +7,15 @@ import {
   addStudent,
   deleteStudent,
   updateStudent,
+  setStudents,
 } from "../redux/studentSlice";
+
+import {
+  getStudentsAPI,
+  createStudentAPI,
+  updateStudentAPI,
+  deleteStudentAPI,
+} from "../api/studentAPI";
 
 export default function DashboardPage() {
   const dispatch = useDispatch();
@@ -15,16 +23,30 @@ export default function DashboardPage() {
 
   const [editingStudent, setEditingStudent] = useState(null);
 
-  const handleSubmitStudent = (studentData) => {
+  const loadStudents = async () => {
+    const data = await getStudentsAPI();
+    dispatch(setStudents(data));
+  };
+
+  useEffect(() => {
+    loadStudents();
+  }, []);
+
+  // loadStudents();
+
+  const handleSubmitStudent = async (studentData) => {
     if (editingStudent) {
+      await updateStudentAPI(studentData);
       dispatch(updateStudent(studentData));
       setEditingStudent(null);
     } else {
+      await createStudentAPI(studentData);
       dispatch(addStudent(studentData));
     }
   };
 
-  const handleDeleteStudent = (studentID) => {
+  const handleDeleteStudent = async (studentID) => {
+    await deleteStudentAPI(studentID);
     dispatch(deleteStudent(studentID));
   };
 

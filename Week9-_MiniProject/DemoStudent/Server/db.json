@@ -1,0 +1,18 @@
+{
+  "students": [
+    {
+      "name": "TechWave Dynamics",
+      "email": "techwavedy@gmail.com",
+      "course": "ReactJS Master",
+      "age": "43",
+      "id": "qpgPT5dDN6I"
+    }
+  ],
+  "savedDateTime": [
+    {
+      "datetime": "2026-06-07T15:44:49+00:00",
+      "id": "CCz7oh5K9wQ"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}

@@ -4,6 +4,7 @@ import Button from "../ui/Button";
 import { useThemeStore } from "../../zustand/useThemeStore";
 import { useAuthStore } from "../../zustand/useAuthStore";
 import { useNavigate, Navigate } from "react-router-dom";
+import CurrentTime from "./CurrentTime";
 
 export default function AppNavBar() {
   const navigate = useNavigate();
@@ -25,6 +26,7 @@ export default function AppNavBar() {
         Student Manager
       </NavLink>
       <nav className="nav-actions">
+        <CurrentTime />
         <Button onClick={toggleTheme}>
           {theme == "light" ? "Dark Mode" : "Light Mode"}
         </Button>

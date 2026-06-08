@@ -46,7 +46,7 @@ export default function StudentForm({
       </div>
 
       <div className="form-grid">
-        <lebel>
+        <label>
           Name
           <input
             type="text"
@@ -56,8 +56,8 @@ export default function StudentForm({
             onChange={handleChange}
             required
           />
-        </lebel>
-        <lebel>
+        </label>
+        <label>
           Email
           <input
             type="email"
@@ -67,8 +67,8 @@ export default function StudentForm({
             onChange={handleChange}
             required
           />
-        </lebel>
-        <lebel>
+        </label>
+        <label>
           Course
           <input
             type="text"
@@ -78,8 +78,8 @@ export default function StudentForm({
             onChange={handleChange}
             required
           />
-        </lebel>
-        <lebel>
+        </label>
+        <label>
           Age
           <input
             type="number"
@@ -89,7 +89,7 @@ export default function StudentForm({
             onChange={handleChange}
             required
           />
-        </lebel>
+        </label>
       </div>
 
       <div className="button-row">
